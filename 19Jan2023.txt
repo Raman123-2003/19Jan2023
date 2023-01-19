@@ -1,0 +1,39 @@
+Q1. Describe higher order functions.
+Answer:- A Higher-Order Function is a regular function that takes one or more functions as arguments and/or returns a function as a value from it. Here is an example of a function that takes a function as an argument.
+
+// Define a function that takes a function as an argument.
+ function getCapture(camera) {
+// Invoke the passed function
+camera();
+}
+// Invoke the function by passing a function as an argument
+getCapture(function(){
+console.log('Canon');
+});
+
+Higher-order functions are functions that take one or more functions as arguments and/or return a function as output. They allow for more flexible and reusable code by abstracting away common patterns and operations. Some common examples of higher-order functions in programming languages include map, filter, and reduce. These functions take in a function as an argument and apply it to a collection of data, such as a list or an array, and return a new collection.
+
+
+Q2. write use cases + any one code example for map, filter and reduce.
+Answer:- Map is a higher-order function that takes in a function and an array, and applies the function to each element in the array, returning a new array with the results.
+A common use case for map is to perform a transformation on all elements in an array, such as converting an array of strings to an array of numbers.
+Example:
+const numbers = [1, 2, 3, 4, 5];
+const doubledNumbers = numbers.map(x => x * 2);
+console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+
+filter is a higher-order function that takes in a function and an array, and returns a new array with only the elements from the original array for which the function returned true.
+A common use case for filter is to select only certain elements from an array that meet certain criteria, such as finding all even numbers in an array.
+Example:
+const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter(x => x % 2 === 0);
+console.log(evenNumbers); // [2, 4, 6]
+
+reduce is a higher-order function that takes in a function and an array, and applies the function cumulatively to the elements of the array, reducing it to a single value.
+A common use case for reduce is to perform a mathematical operation on all elements in an array and obtain a single value, such as finding the sum of all elements in an array.
+Example:
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+console.log(sum); // 15
+
+Note: The first argument of the callback function passed to reduce is the accumulator and the second argument is the currentValue.
