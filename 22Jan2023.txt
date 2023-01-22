@@ -1,0 +1,61 @@
+Q1. Read about HTTP requests and different methods.
+Answer:-  HTTP, or Hypertext Transfer Protocol, is a set of rules for transferring files, such as text, audio, and video, on the internet. It is the foundation of the World Wide Web.
+There are several different types of HTTP requests, each with their own purpose and use case. The most commonly used HTTP requests are:
+
+GET: The GET method requests a representation of the specified resource. It can be used to retrieve data from a server.
+
+POST: The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server.
+
+PUT: The PUT method replaces all current representations of the target resource with the request payload.
+
+DELETE: The DELETE method deletes the specified resource.
+
+HEAD: The HEAD method is identical to GET, but it only returns the headers and status line, and no document body.
+
+PATCH: The PATCH method applies partial modifications to a resource.
+
+OPTIONS: The OPTIONS method describes the communication options for the target resource.
+
+CONNECT: The CONNECT method establishes a tunnel to the server identified by the target resource.
+
+TRACE: The TRACE method performs a message loop-back test along the path to the target resource.
+
+LINK: The LINK method creates a link between a resource identified by the target and another resource identified by the request payload.
+
+UNLINK: The UNLINK method removes the link between a resource identified by the target and another resource identified by the request payload.
+
+Q2. How you do make HTTP requests via axios.
+Answer:- Axios is a popular JavaScript library that allows you to easily make HTTP requests from the browser or a Node.js environment. Here is an example of how you can use Axios to make an HTTP GET request to retrieve data from a server:
+
+import axios from 'axios';
+
+axios.get('https://some-api.com/data')
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+This example uses the get() method provided by Axios to make a GET request to the specified URL. The then() method is used to handle the response from the server, which is passed as the first argument to the callback function. The catch() method is used to handle any errors that occur during the request.
+
+Here is an example of how you can use Axios to make an HTTP POST request to submit data to a server:
+
+import axios from 'axios';
+axios.post('https://some-api.com/data', {
+    name: 'Raman Kumar',
+    age: 20
+  })
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+This example uses the post() method provided by Axios to make a POST request to the specified URL. The second argument of the post() method is the data that needs to be sent to the server.
+In addition to get() and post(), you can use other methods such as put(), delete(), options(), head() , patch() etc.
+You can also customize the request with additional options, such as setting headers, handling errors, and providing a timeout value, you can use the axios.create() method to create a new instance of Axios with custom settings.
+
+
+
